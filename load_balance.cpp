@@ -84,7 +84,7 @@ int main ( int argc, char *argv[] )
 	}
 
 	// Maximum number of angles in each rank
-	int maxval = 10;
+	int maxval = 20;
 	double * angles;
 	double * newresults;
 	double * originalresults;
@@ -112,14 +112,9 @@ int main ( int argc, char *argv[] )
 	rebalance_data(angles, total_elements, currentnval, sum_exclusive, taskid, numproc, finalnval, newresults, originalresults, numelements_old);
 
 	cout << " After redistribution, number of elements in Process " << taskid << " = " << finalnval << endl;
-
-        //int total_oldelements = sizeof(originalresults)/sizeof(originalresults[0]);
-        
-        //cout << "size of original results = " << sizeof(originalresults) << " Rank = " << taskid <<endl;
 	
 	for (int i = 0; i < numelements_old ; ++i)
 	{
-	        //MPI_Barrier(MPI_COMM_WORLD); // For printing data coherently
 		cout<< "Process = " << taskid << " Total oldelements = "<< numelements_old << " Angle number  " << i << " = " << originalresults[i]  << endl;
 	}
 
