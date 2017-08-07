@@ -40,7 +40,6 @@ using namespace std;
 
 // function declaration
 
-int main ( int argc, char *argv[] );
 void intialize_data(const int taskid, const int maxval, double *&angles, int &numvals);
 int globalrank(const int globalpsum, const int nvalspertask);
 void rebalance_data(double *&angles, const int total_elements, const int numvals, const int globalstart, const int taskid, const int numproc, int &modified_numvals, double *&results, double *&originalresults, int &total_oldelements );
